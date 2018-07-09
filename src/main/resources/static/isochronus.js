@@ -65,7 +65,9 @@ $('#address_search').autocomplete(
                             var isochroneStyle = {
                                 "color": colors[index],
                                 "weight": data.length-index,
-                                "opacity": 0.8
+                                "opacity": 0.45,
+                                "fillOpacity":0.45
+                                
                             };
                             var isochroneJson = JSON.parse( value );
                             
