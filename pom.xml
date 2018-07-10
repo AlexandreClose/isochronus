@@ -134,6 +134,11 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+                                <configuration>
+                                    <jvmArguments>
+                                    -Dhttp.proxyHost=cas.dev.ressources.paris.mdp -Dhttp.proxyPort=3128 -Dhttps.proxyHost=cas.dev.ressources.paris.mdp -Dhttps.proxyPort=3128
+                                    </jvmArguments>
+                                </configuration>
                         </plugin>
                 </plugins>
 	</build>

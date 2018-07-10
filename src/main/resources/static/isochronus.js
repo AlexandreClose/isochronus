@@ -56,8 +56,8 @@ $('#address_search').autocomplete(
                     data: JSON.stringify(ui.item),
                     success: function(data)
                     {
-                        var colorBegin = "#b2f653";
-                        var colorEnd = "#680000";
+                        var colorBegin = "#d3f5ff";
+                        var colorEnd = "#001b4c";
                         var colors = styleSteps( colorBegin, colorEnd, data.length );
                         //Returns a list of isochrons as geojson; readable for leaflet
                         data.forEach( function( value, index)
@@ -65,8 +65,8 @@ $('#address_search').autocomplete(
                             var isochroneStyle = {
                                 "color": colors[index],
                                 "weight": data.length-index,
-                                "opacity": 0.45,
-                                "fillOpacity":0.45
+                                "opacity": 0.15,
+                                "fillOpacity":0.6
                                 
                             };
                             var isochroneJson = JSON.parse( value );
