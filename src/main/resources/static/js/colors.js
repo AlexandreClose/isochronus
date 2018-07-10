@@ -90,9 +90,9 @@ var styleSteps = function( colorBegin, colorEnd, nSteps )
     
     var colorSteps = [colorBegin];
     
-    for ( var i = 1; i<= nSteps; i++)
+    for ( var i = 1; i<= nSteps-1; i++)
     {
-        var icol = interpolateHSL( sCol, eCol, factorStep * i),
+        var icol = interpolateHSL( sCol, eCol, factorStep * (i+1));
         hcol = r2h(icol);
         colorSteps.push( hcol );
     }

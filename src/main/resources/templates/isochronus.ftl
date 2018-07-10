@@ -4,11 +4,11 @@
         <title>Isochronus</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
-            integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
-            crossorigin=""/>
-         <link rel="stylesheet" href="/isochronus.css" />
-         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+         <link rel="stylesheet" href="/leaflet/leaflet.css"/>
+         <link rel="stylesheet" href="/jquery-ui-1.12.1/jquery-ui.min.css" />
+         <link rel="stylesheet" href="/bootstrap-3.3.7/css/bootstrap.min.css"/>
+         <link rel="stylesheet" href="/colorpicker/bootstrap-colorpicker.css" >
+         <link rel="stylesheet" href="/css/isochronus.css" />
     </head>
     <body>
         <div id="viewport" class="row justify-content-md-center justify-content-sm-center">
@@ -18,27 +18,43 @@
                     <input class="form-control" type="text" id="address_search" name="address_search" />
                 </div>
                 <div class="form-row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <label for="min_duration">Durée min. du trajet</label>
                         <input class="form-control" type="text" id="min_duration" name="min_duration" value="1000" />
                     </div>
-                    <div class="col-sm-6">
-                        <label for="max_duration">Durée min. du trajet</label>
+                    <div class="col-sm-4">
+                        <label for="max_duration">Durée max. du trajet</label>
                         <input class="form-control" type="text" id="max_duration" name="max_duration" value="2000"/>
                     </div>
+                    <div class="col-sm-4">
+                        <label for="nb_isochrones">Nombre d'isochrones</label>
+                        <input class="form-control" type="text" id="nb_isochrones" name="nb_isochrones" value="4"/>
+                    </div>
                 </div>
-                <br>
-                <div class="row" id="map"></div>
+                <div class="form-row">
+                    <div class="col-sm-6">
+                        <!--<label for="begin_color">Couleur départ</label>-->
+                        <div id="color_picker_begin" class="input-group colorpicker-component">
+                            <input type="text" class="form-control input-lg" id="begin_color" name="begin_color" value="#73ba48"/>
+                            <span class="input-group-addon"><i></i></span>
+                          </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <!--<label for="end_color">Couleur fin</label>-->
+                        <div id="color_picker_end" class="input-group colorpicker-component">
+                            <input type="text" class="form-control input-lg" id="end_color" name="end_color" value="#ff0000"/>
+                            <span class="input-group-addon"><i></i></span>
+                        </div>
+                    </div>
+                    <div class="form-control" id="map"></div>
+                </div>
             </div>
         </div>
-        
-        
+        <script src="/jquery-3.3.1.min.js"></script>
+        <script src="/jquery-ui-1.12.1/jquery-ui.js"></script>
+        <script src="/colorpicker/bootstrap-colorpicker.js"></script>
+        <script src="/leaflet/leaflet.js"></script>
+        <script src="/js/colors.js"></script>
+        <script src="/js/isochronus.js"></script>
     </body>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
-        integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
-        crossorigin=""></script>
-    <script src="/colors.js"></script>
-    <script src="/isochronus.js"></script>
 </html>
