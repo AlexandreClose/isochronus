@@ -19,12 +19,12 @@
                 </div>
                 <div class="form-row">
                     <div class="col-sm-4">
-                        <label for="min_duration">Durée min. du trajet</label>
-                        <input class="form-control" type="text" id="min_duration" name="min_duration" value="1000" />
+                        <label for="min_duration">Durée min. du trajet (en min.)</label>
+                        <input class="form-control" type="text" id="min_duration" name="min_duration" value="0" />
                     </div>
                     <div class="col-sm-4">
-                        <label for="max_duration">Durée max. du trajet</label>
-                        <input class="form-control" type="text" id="max_duration" name="max_duration" value="2000"/>
+                        <label for="max_duration">Durée max. du trajet (en min.)</label>
+                        <input class="form-control" type="text" id="max_duration" name="max_duration" value="30"/>
                     </div>
                     <div class="col-sm-4">
                         <label for="nb_isochrones">Nombre d'isochrones</label>

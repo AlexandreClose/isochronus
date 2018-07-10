@@ -42,6 +42,10 @@ public class IsochronusController {
         List<String> listIsochrones = new ArrayList<>();
         if ( !address.getLabel().isEmpty() )
         {
+            //Convert minDuration and maxDuration to sec. 
+            nMinDuration*=60;
+            nMaxDuration*=60;
+            
             int nIterateMinDuration = nMinDuration;
             int nIterateMaxDuration = nMinDuration;
             int nAugmMaxDuration = ( nMaxDuration - nMinDuration )/nIsochrones;
