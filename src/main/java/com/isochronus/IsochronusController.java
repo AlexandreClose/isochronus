@@ -36,28 +36,13 @@ public class IsochronusController {
     public ResponseEntity computeIsochrones (
             @RequestBody Address address, 
             @RequestParam( name = "min_duration") int nMinDuration, 
-            @RequestParam( name = "max_duration") int nMaxDuration, 
-            @RequestParam( name = "nb_isochrones") int nIsochrones  ) 
+            @RequestParam( name = "max_duration") int nMaxDuration ) 
     {
-        List<String> listIsochrones = new ArrayList<>();
         if ( !address.getLabel().isEmpty() )
         {
-            //Convert minDuration and maxDuration to sec. 
-            nMinDuration*=60;
-            nMaxDuration*=60;
+            String strIsochrones = isochronesService.getIsochrones(address, nMinDuration, nMaxDuration);
             
-            int nIterateMinDuration = nMinDuration;
-            int nIterateMaxDuration = nMinDuration;
-            int nAugmMaxDuration = ( nMaxDuration - nMinDuration )/nIsochrones;
-            for ( int i = 1 ; i <= nIsochrones ; i++ )
-            {
-                nIterateMinDuration = nIterateMaxDuration;
-                nIterateMaxDuration += nAugmMaxDuration;
-                String strIsochrones = isochronesService.getIsochrones(address, nIterateMinDuration, nIterateMaxDuration);
-                listIsochrones.add( strIsochrones );
-            }
-            
-            return new ResponseEntity( listIsochrones, HttpStatus.OK);
+            return new ResponseEntity( strIsochrones, HttpStatus.OK);
         }
         else
         {

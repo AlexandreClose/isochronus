@@ -46,8 +46,17 @@
                             <span class="input-group-addon"><i></i></span>
                         </div>
                     </div>
-                    <div class="form-control" id="map"></div>
                 </div>
+                <div class="form-row">
+                    <button id="compute_isochrones" type="button" class="btn btn-primary col-sm-4">Calculer mes isochrones</button>
+                    <div class="progress col-sm-8">
+                        <div id="loading_bar_isochrones" class="progress-bar">
+                          0%
+                        </div>
+                  </div>
+                </div>
+                
+                <div class="form-control" id="map"></div>
             </div>
         </div>
         <script src="/jquery-3.3.1.min.js"></script>
